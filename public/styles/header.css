@@ -5,6 +5,11 @@ body > header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #d3cdb6;
+  background-color: #cea500;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+}
+
+.profile-pict {
+  margin-top: 20px;
+  margin-bottom: -50px;
 }
