@@ -1,0 +1,32 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-tweet textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid black;
+  width: 85vw;
+  margin-bottom: 20px;
+
+}
+
+.new-tweet div button {
+  background-color: #2448C2;
+  font-family: 'Bungee', sans-serif;
+  color: white;
+  padding: 5px;
+  border: 3px #545149;
+  border-radius: 5px;
+  outline: none;
+}
+
+
