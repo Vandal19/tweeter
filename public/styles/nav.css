@@ -10,16 +10,19 @@ nav {
   z-index: 1;
 }
 
-.logo {
+nav span {
   font-family: 'Bungee', sans-serif;
   font-size: 35px
 }
 
-div {
+nav div {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
+}
+
+nav div p {
+  height: 5px
 }
 
 .nav-write {
