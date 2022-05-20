@@ -1,5 +1,5 @@
-body > header {
-  height: 400px;
+header.header {
+  height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,9 +7,11 @@ body > header {
   align-items: center;
   background-color: #cea500;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  padding-top: 3em;
+  margin-bottom: 0em;
 }
 
-.profile-pict {
-  margin-top: 20px;
-  margin-bottom: -50px;
+header div.profile-pict {
+  margin-top: 50px;
+  margin-bottom: -60px;
 }

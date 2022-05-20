@@ -8,9 +8,11 @@ nav {
   align-items:center;
   padding: 1.5em;
   z-index: 1;
+  position: fixed;
+  top: 0;
 }
 
-nav span {
+span.logo{
   font-family: 'Bungee', sans-serif;
   font-size: 35px
 }

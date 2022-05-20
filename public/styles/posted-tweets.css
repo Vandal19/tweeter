@@ -52,6 +52,7 @@ article.tweets footer {
 article.tweets header div h2{
   color: grey;
   font-size: 45px;
+  margin-left:0.25em
 }
 
 article.tweets header p {
