@@ -29,7 +29,7 @@ $(document).ready(() => {
     }
   ];
 
-  const createTweetElement = function(data) {
+  const createTweetElement = function (data) {
     const { name, avatars, handle } = data.user;
     const content = data.content.text;
     const created = data.created_at;
@@ -61,7 +61,7 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $(".posted-tweets").append($tweet);
@@ -69,5 +69,17 @@ $(document).ready(() => {
   };
 
   renderTweets(data);
+
+
+  $("form").submit(function (event) {
+    event.preventDefault();
+    const data = $(this).serialize();
+    console.log(data);
+    $.post({
+      type: "POST",
+      url: "/tweets",
+      data: data,
+    });
+  });
 
 });
