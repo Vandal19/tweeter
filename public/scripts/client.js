@@ -5,7 +5,7 @@
  */
 $(document).ready(() => {
 
-  const createTweetElement = function(data) {
+  const createTweetElement = function (data) {
     const { name, avatars, handle } = data.user;
     const content = data.content.text;
     const created = data.created_at;
@@ -48,16 +48,27 @@ $(document).ready(() => {
 
   $("form").submit(function (event) {
     event.preventDefault();
-    const data = $(this).serialize();
-    console.log(data);
-    $.post({
-      type: "POST",
-      url: "/tweets",
-      data: data,
-    });
+    if (!$('#tweet-text').val().trim()) {
+      alert(`Please fill in something, you can't post an empty tweet!`);
+    } else if ($('#tweet-text').val().length > 140) {
+      alert(`Your tweet is over the 140 characters limit, please create a new tweet to continue on!`);
+    } else {
+      const data = $(this).serialize();
+      $.post({
+        type: "POST",
+        url: "/tweets",
+        data: data,
+      })
+        .then(function() {
+          $("form").trigger("reset");
+        })
+        .then(function() {
+          loadTweets();
+        });
+    }
   });
 
-  const loadTweets = function() {
+  const loadTweets = function () {
     $.ajax({
       type: "Get",
       url: "/tweets",

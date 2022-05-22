@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('textarea').on("input", function() {
     const counter = $(this).next().children(".counter");
     const length = $(this).val().length;
-    const maxWord = '10';
+    const maxWord = '140';
     const count = maxWord - length;
     $(counter).val(count);
 
