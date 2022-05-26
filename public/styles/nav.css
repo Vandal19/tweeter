@@ -24,14 +24,19 @@ nav div {
 }
 
 nav div p {
-  height: 5px
-}
-
-.nav-write {
+  height: 5px;
   font-family:'Source Sans Pro', sans-serif;
   font-size: 30px ;
 }
 
-.fa-solid {
-  color: red
+/* .nav-write {
+  font-family:'Source Sans Pro', sans-serif;
+  font-size: 30px ;
+} */
+
+ nav div i {
+  color: red;
+  transform: translate(0px, 6px);
+  cursor: pointer
 }
+

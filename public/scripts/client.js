@@ -20,7 +20,7 @@ $(document).ready(() => {
           <p>${handle}</p>
         </header>
         <div class = "tweet">
-          <p>${content}</p>
+          <p>${escape(content)}</p>
         </div>
         <footer>
           <span>${timeago.format(data.created_at)}</span>
@@ -38,35 +38,51 @@ $(document).ready(() => {
     return $tweet;
   };
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $(".posted-tweets").append($tweet);
+      $(".posted-tweets").prepend($tweet);
     }
   };
 
+  $(".write-tweet").click(function () {
+    if ($(".new-tweet form, .invalid").is(":hidden")) {
+      $(".new-tweet form, .invalid").slideDown()
+    } else {
+      $(".new-tweet form, .invalid").slideUp()
+    }
+  });
 
   $("form").submit(function (event) {
     event.preventDefault();
     if (!$('#tweet-text').val().trim()) {
-      alert(`Please fill in something, you can't post an empty tweet!`);
+      $('.invalid').text(`Please type in something, you can't post an empty tweet!`).hide().slideDown("slow");
     } else if ($('#tweet-text').val().length > 140) {
-      alert(`Your tweet is over the 140 characters limit, please create a new tweet to continue on!`);
+      $('.invalid').text('Your tweet is over the 140 characters limit, please create a new tweet to continue on!');
+      $('.invalid').hide().slideDown("slow");
     } else {
+      $('.invalid').slideUp();
       const data = $(this).serialize();
       $.post({
         type: "POST",
         url: "/tweets",
         data: data,
       })
-        .then(function() {
+        .then(function () {
           $("form").trigger("reset");
         })
-        .then(function() {
+        .then(function () {
           loadTweets();
         });
     }
   });
+
 
   const loadTweets = function () {
     $.ajax({
