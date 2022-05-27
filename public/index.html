@@ -31,7 +31,7 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- Top Nav Bar -->
     <nav>
       <span class = "logo">Tweeter</span>
       <div class = "write-tweet">
@@ -47,7 +47,7 @@
       </div>
       <br>
       <div>
-          <h2>Milton Vandol</h2>
+          <h2 class = "name"><b>Milton</b> Vandol</h2>
       </div>
     </header>
 
@@ -55,7 +55,7 @@
     <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <p class ="invalid"></p>
+      <p class ="invalid" ></p>
       <form action="/tweets" method="POST">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div>
@@ -65,29 +65,14 @@
       </form>
     </section>
     <section class="posted-tweets">
-      <article class ="tweets">
-        <header>
-          <div>
-            <img src="/images/avatar1.png">
-            <h2>Alon Musk</h2>
-          </div>
-          <p>@alonmusk</p>
-        </header>
-        <div class = "tweet">
-          <p>Unless it is stopped, the woke mind virus will destroy civilization and humanity will never reached Mars! Mars is the only way to go to in order to save humanity!</p>
-        </div>
-        <footer>
-          <div>
-            <p>6 days ago</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article>
     </section>
+    <div class ="scroll-page">
+      <div class="scroll"></div>
+      <i class="fa-solid fa-circle-arrow-up"></i>
+    </div>
+    <footer>
+      <h2>Scroll to Top</h2>
+    </footer>
     </main>
   </body>
 </html>

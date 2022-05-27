@@ -4,8 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(() => {
-
-  const createTweetElement = function (data) {
+// Function to create new tweet html //
+  const createTweetElement = function(data) {
     const { name, avatars, handle } = data.user;
     const content = data.content.text;
     const created = data.created_at;
@@ -23,14 +23,14 @@ $(document).ready(() => {
           <p>${escape(content)}</p>
         </div>
         <footer>
-          <span>${timeago.format(data.created_at)}</span>
+          <span>${timeago.format(created)}</span>
           <div>
-            <p>${created}</p>
           </div>
           <div>
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
             <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
           </div>
         </footer>
       </article>
@@ -38,28 +38,33 @@ $(document).ready(() => {
     return $tweet;
   };
 
+  // Escape Function to prevent XSS with Escaping //
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const renderTweets = function (tweets) {
+// Function to loop through tweets, call createTweetElements with prepend the return value to the posted tweets//
+  const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $(".posted-tweets").prepend($tweet);
     }
   };
 
-  $(".write-tweet").click(function () {
-    if ($(".new-tweet form, .invalid").is(":hidden")) {
-      $(".new-tweet form, .invalid").slideDown()
+// Function to write a new tweet when click on "Write a new tweet" on header //
+  $(".write-tweet").click(function() {
+    if ($(".new-tweet form").is(":hidden")) {
+      $(".new-tweet form").slideDown();
     } else {
-      $(".new-tweet form, .invalid").slideUp()
+      $(".new-tweet form").slideUp();
+      $(".invalid").slideUp();
     }
   });
 
-  $("form").submit(function (event) {
+// Implementing form validation to ensure data check before sending a POST request to /tweets using Ajax along with some slideUp/Down animation//
+  $("form").submit(function(event) {
     event.preventDefault();
     if (!$('#tweet-text').val().trim()) {
       $('.invalid').text(`Please type in something, you can't post an empty tweet!`).hide().slideDown("slow");
@@ -74,23 +79,23 @@ $(document).ready(() => {
         url: "/tweets",
         data: data,
       })
-        .then(function () {
+        .then(function() {
           $("form").trigger("reset");
         })
-        .then(function () {
+        .then(function() {
           loadTweets();
         });
     }
   });
 
-
-  const loadTweets = function () {
+// Using Get request to load the tweet that was just posted to /tweets using Ajax//
+  const loadTweets = function() {
     $.ajax({
       type: "Get",
       url: "/tweets",
       data: "json",
     })
-      .then(function (data) {
+      .then(function(data) {
         renderTweets(data);
       });
   };

@@ -1,3 +1,4 @@
+/* CSS styling for posting a New Tweet*/
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -50,12 +51,13 @@
 .new-tweet form {
   width: 100%;
   display: none;
-  margin-right: 2em
 }
 
 .invalid {
   color: red;
   border: 3px dashed #726767;
+  border-radius: 12px;
+  padding: 12px;
   display: none;
 }
 
