@@ -54,17 +54,7 @@ $(document).ready(() => {
     }
   };
 
-// Function to write a new tweet when click on "Write a new tweet" on header //
-  $(".write-tweet").click(function() {
-    if ($(".new-tweet form").is(":hidden")) {
-      $(".new-tweet form").slideDown();
-    } else {
-      $(".new-tweet form").slideUp();
-      $(".invalid").slideUp();
-    }
-  });
-
-// Implementing form validation to ensure data check before sending a POST request to /tweets using Ajax along with some slideUp/Down animation//
+// Implement form validation to ensure data check before sending a POST request to /tweets using Ajax along with some slideUp/Down animation//
   $("form").submit(function(event) {
     event.preventDefault();
     if (!$('#tweet-text').val().trim()) {
@@ -89,7 +79,7 @@ $(document).ready(() => {
     }
   });
 
-// Using Get request to load the tweet that was just posted to /tweets using Ajax//
+// Use Get request to load the tweet that was just posted to /tweets using Ajax//
   const loadTweets = function() {
     $.ajax({
       type: "Get",

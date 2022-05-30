@@ -14,6 +14,16 @@ $(document).ready(function() {
     }
   });
 
+  // Function to write a new tweet when click on "Write a new tweet" on header //
+  $(".write-tweet").click(function() {
+    if ($(".new-tweet form").is(":hidden")) {
+      $(".new-tweet form").slideDown();
+    } else {
+      $(".new-tweet form").slideUp();
+      $(".invalid").slideUp();
+    }
+  });
+
   /* Function to add a 2nd toggle button that will scrollToTop once the user click on it*/
   $(document).scroll(function() {
     $(".scroll-page").show();
