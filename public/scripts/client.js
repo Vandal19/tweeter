@@ -47,6 +47,7 @@ $(document).ready(() => {
 
 // Function to loop through tweets, call createTweetElements with prepend the return value to the posted tweets//
   const renderTweets = function(tweets) {
+    $(".posted-tweets").empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $(".posted-tweets").prepend($tweet);
