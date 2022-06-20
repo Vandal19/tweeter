@@ -1,0 +1,57 @@
+@import "variables";
+// CSS styling for posting a New Tweet
+
+.new-tweet {
+  @include center;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    @include center;
+    color: $second-color;
+    font-size: 50px;
+  }
+
+  .invalid {
+    color: $arrow-color;
+    border: 3px dashed $text-color;
+    border-radius: 12px;
+    padding: 12px;
+    display: none;
+  }
+
+  form {
+    width: 100%;
+    display: none;
+
+    textarea {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      border-bottom: 3px solid black;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    div {
+      @include center;
+      justify-content: space-between;
+      button {
+        background-color: $first-color;
+        font-family: $nav-font;
+        color: $note-color;
+        padding: 5px;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        overflow: hidden;
+        &:hover {
+          color: $second-color;
+        }
+      }
+      #counter {
+        font-family: $nav-font;
+      }
+    }
+  }
+}

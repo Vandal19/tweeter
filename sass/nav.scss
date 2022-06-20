@@ -1,0 +1,55 @@
+@import "variables";
+/* CSS styling for Top Nav Bar*/
+nav {
+  height: 120px;
+  width: 100%;
+  background: $first-color;
+  color: $note-color;
+  @include center;
+  justify-content: space-between;
+  padding: 1.5em;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+
+  span {
+    font-family: $nav-font;
+    font-size: 35px;
+  }
+
+  div {
+    @include column-center;
+
+    p {
+      height: 5px;
+      font-family: $text-font;
+      font-size: 30px;
+    }
+
+    i {
+      color: $arrow-color;
+      cursor: pointer;
+      animation-name: bounce;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      position: relative;
+    }
+    @keyframes bounce {
+      0% {
+        color: red;
+        left: 0px;
+        top: 0px;
+      }
+      50% {
+        color: white;
+        left: 0px;
+        top: 10px;
+      }
+      100% {
+        color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+  }
+}

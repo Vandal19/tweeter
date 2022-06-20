@@ -1,53 +1,57 @@
 /* CSS styling for Header for profile*/
-body > header {
+.header {
   height: 550px;
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: column;
   align-items: center;
+  justify-content: space-evenly;
   background-color: #cea500;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   padding-top: 3em;
   margin-bottom: 0em;
 }
-
-header div.profile-pict {
-  margin-top: 40px;
-  margin-bottom: -60px;
+.header div {
+  margin-bottom: -40px;
   animation-name: animate;
-  animation-duration: 3s; 
+  animation-duration: 3s;
   animation-iteration-count: infinite;
-  position: relative
+  position: relative;
 }
-
-header div .name {
+.header div h2 {
   font-size: 50px;
-  color: rgb(255, 255, 255);
+  color: #FFFFFF;
 }
-
 @keyframes animate {
-  0% {color:blue; left: 0px; top: 0px;}
-  50% {color:white; left: 0px; top: 10px;}
-  100% {color:blue; left: 0px; top: 0px;}
+  0% {
+    color: blue;
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    color: white;
+    left: 0px;
+    top: 10px;
+  }
+  100% {
+    color: blue;
+    left: 0px;
+    top: 0px;
+  }
 }
 
-/* Creating a responsive design using @keyframes for 1024px and above for min-width*/ 
-@media only screen and (min-width:1024px) {
+/* Creating a responsive design using @keyframes for 1024px and above for min-width*/
+@media only screen and (min-width: 1024px) {
   body {
     display: flex;
     width: 100%;
   }
-  
-  body > header {
+  body header {
     width: 40%;
-    margin: 7em 1em 7em 1em;
-    
-  } 
-
-  body > main {
-    width: 60%;
-    padding-left:2em;
-    margin: 3em 1em 0em 0em
+    margin: 2vh 0vw -2vh 3vw;
+    padding-top: 1em;
   }
- }
+  body main {
+    width: 60%;
+    padding-left: 2em;
+  }
+}

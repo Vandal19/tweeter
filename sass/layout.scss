@@ -1,0 +1,84 @@
+@import "variables";
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+/* CSS styling for Layout */
+html {
+  box-sizing: border-box;
+  font-family: $text-font;
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  body {
+    color: $text-color;
+    background-color: $note-color;
+    font-family: $text-font;
+    font-size: 24px;
+
+    nav {
+      font-family: $nav-font;
+      font-size: 24px;
+    }
+
+    main {
+      width: 90%;
+      background-color: $note-color;
+      margin: 0 auto;
+
+      .scroll-page {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 5px;
+
+        .fa-circle-arrow-up {
+          @include center;
+          justify-content: flex-end;
+          height: 50px;
+          font-size: 65px;
+          color: $first-color;
+          opacity: 0.85;
+          animation-name: toggle;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          position: relative;
+          &:hover {
+            color: $second-color;
+            outline: none;
+            cursor: pointer;
+          }
+        }
+      }
+      footer {
+        height: 65px;
+        h2 {
+          @include center;
+          justify-content: flex-end;
+          font-size: 25px;
+          color: rgb(126, 48, 48);
+          margin: 0.5em 2em 0em 0em;
+        }
+
+        @keyframes toggle {
+          0% {
+            left: 0px;
+            bottom: 0px;
+          }
+          50% {
+            left: 0px;
+            bottom: 10px;
+          }
+          100% {
+            left: 0px;
+            bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}

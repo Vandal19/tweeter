@@ -1,68 +1,52 @@
-/* CSS styling for posting a New Tweet*/
 .new-tweet {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   width: 100%;
 }
-
 .new-tweet h2 {
   display: flex;
-  color: rgb(208, 149, 11);
-  font-size: 50px
+  align-items: center;
+  color: #cea500;
+  font-size: 50px;
 }
-
-.new-tweet div {
-  display: flex;
-  justify-content: space-between;
+.new-tweet .invalid {
+  color: #F4210A;
+  border: 3px dashed #494844;
+  border-radius: 12px;
+  padding: 12px;
+  display: none;
 }
-
-.new-tweet textarea {
+.new-tweet form {
+  width: 100%;
+  display: none;
+}
+.new-tweet form textarea {
   background-color: transparent;
   border: none;
   outline: none;
   border-bottom: 3px solid black;
   width: 100%;
   margin-bottom: 20px;
-
 }
-
-.new-tweet div button {
-  background-color: #2448C2;
-  font-family: 'Bungee', sans-serif;
-  color: white;
+.new-tweet form div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.new-tweet form div button {
+  background-color: #4056A1;
+  font-family: "Bungee", sans-serif;
+  color: #FFFFFF;
   padding: 5px;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
-  box-shadow: rgb(23 25 28 / 20%) 1px 1px 4px;
-  overflow: hidden
+  overflow: hidden;
 }
-
-.new-tweet div button:hover {
-  background-color: #cea500;
-  outline: none;
+.new-tweet form div button:hover {
+  color: #cea500;
 }
-
-.new-tweet div #counter {
-  font-family: 'Bungee', sans-serif;
+.new-tweet form div #counter {
+  font-family: "Bungee", sans-serif;
 }
-
-.new-tweet form {
-  width: 100%;
-  display: none;
-}
-
-.invalid {
-  color: red;
-  border: 3px dashed #726767;
-  border-radius: 12px;
-  padding: 12px;
-  display: none;
-}
-
-
-
-
-
-

@@ -1,0 +1,62 @@
+@import "variables";
+
+/* CSS styling for Header for profile*/
+.header {
+  height: 550px;
+  @include column-center;
+  justify-content: space-evenly;
+  background-color: $second-color;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  padding-top: 3em;
+  margin-bottom: 0em;
+
+  div {
+    margin-bottom: -40px;
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position: relative;
+
+    h2 {
+      font-size: 50px;
+      color: $note-color;
+    }
+
+    @keyframes animate {
+      0% {
+        color: blue;
+        left: 0px;
+        top: 0px;
+      }
+      50% {
+        color: white;
+        left: 0px;
+        top: 10px;
+      }
+      100% {
+        color: blue;
+        left: 0px;
+        top: 0px;
+      }
+    }
+  }
+}
+/* Creating a responsive design using @keyframes for 1024px and above for min-width*/
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    width: 100%;
+
+    header {
+      width: 40%;
+      margin: 2vh 0vw -2vh 3vw;
+      padding-top: 1em
+    }
+
+    main {
+      width: 60%;
+      padding-left: 2em;
+      // margin: 2vh 2vw;
+    }
+  }
+}

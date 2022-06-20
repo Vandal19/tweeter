@@ -1,0 +1,67 @@
+@import "variables";
+
+/* CSS styling for posted Tweets*/
+.posted-tweets {
+  @include column-center;
+
+  .tweets {
+    border: 4px solid $text-color;
+    border-radius: 12px;
+    margin-top: 40px;
+    width: 100%;
+    margin: 0.5em 2em 0.5em 2em;
+
+    header {
+      @include center;
+      justify-content: space-between;
+      padding: 2px;
+      margin: 10 20px;
+
+      div {
+       @include center;
+
+        img {
+          height: 75px;
+          width: 75px;
+          opacity: 0.75;
+        }
+
+        h2 {
+          color: $text-color;
+          font-size: 25px;
+          margin-left: 0.25em;
+        }
+
+        p {
+          opacity: 0.75;
+          color: $text-color;
+          font-size: 25px;
+          width: 100%;
+          overflow-wrap: break-word;
+        }
+      }
+    }
+
+    .tweet {
+      font-size: 25px;
+      border-bottom: 4px solid $text-color;
+      margin: 5px 35px;
+    }
+
+    footer {
+      @include center;
+      justify-content: space-between;
+      height: 25px;
+      margin: 5px 20px;
+      font-size: 25px;
+      i {
+        cursor: pointer;
+        color: $first-color;
+        box-shadow: 2px 2px 2px 1px $text-color;
+        &:hover {
+          color: $second-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+// COLOR
+$first-color: #4056A1;
+$second-color: #cea500;
+$text-color:#494844;
+$arrow-color: #F4210A;
+$note-color: #FFFFFF;
+
+// FONT
+$nav-font: 'Bungee', sans-serif;
+$text-font: 'Source Sans Pro', sans-serif;
+
+// ORIENTATION
+@mixin column-center {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+}

@@ -3,82 +3,77 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-
- /* CSS styling for Layout */
+/* CSS styling for Layout */
 html {
   box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
-*, *:before, *:after {
+html *,
+html *:before,
+html *:after {
   box-sizing: inherit;
 }
-
-/*
- * Global layout stuff
- */
-
-body {
-  color: #252420;
-  background-color: #f4f1ec;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 30px;
+html body {
+  color: #494844;
+  background-color: #FFFFFF;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 24px;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
- nav {
-   font-family: "Bungee", cursive;
-   font-size:24px
- }
-
- main {
-   width: 90%;
-   background-color: #f4f1ec ;
-    margin: 0 auto
- }
-
- .scroll-page {
-   display: none;
-   position: fixed;
-   bottom: 30px;
-   right: 5px;
- }
-
- .fa-circle-arrow-up {
-   display: flex;
-   justify-content: flex-end;
-   height: 50px;
-   font-size: 65px;
-   color:#4056A1;
-   opacity: 0.85;
-   animation-name: toggle;
-   animation-duration: 3s; 
-   animation-iteration-count: infinite;
-   position: relative
- }
-
- .fa-circle-arrow-up:hover {
+html body nav {
+  font-family: "Bungee", sans-serif;
+  font-size: 24px;
+}
+html body main {
+  width: 90%;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+}
+html body main .scroll-page {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 5px;
+}
+html body main .scroll-page .fa-circle-arrow-up {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50px;
+  font-size: 65px;
+  color: #4056A1;
+  opacity: 0.85;
+  animation-name: toggle;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+html body main .scroll-page .fa-circle-arrow-up:hover {
   color: #cea500;
   outline: none;
   cursor: pointer;
 }
-
-footer {
-  height: 65px
+html body main footer {
+  height: 65px;
 }
-
-footer h2 {
+html body main footer h2 {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   font-size: 25px;
   color: rgb(126, 48, 48);
   margin: 0.5em 2em 0em 0em;
 }
-
 @keyframes toggle {
-  0% {left: 0px; bottom: 0px;}
-  50% {left: 0px; bottom: 10px;}
-  100% {left: 0px; bottom: 0px;}
+  0% {
+    left: 0px;
+    bottom: 0px;
+  }
+  50% {
+    left: 0px;
+    bottom: 10px;
+  }
+  100% {
+    left: 0px;
+    bottom: 0px;
+  }
 }

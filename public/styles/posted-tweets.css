@@ -1,73 +1,62 @@
 /* CSS styling for posted Tweets*/
-section.posted-tweets{
+.posted-tweets {
   display: flex;
-  flex-direction: column;
-  align-items: center
+  flex-flow: column;
+  align-items: center;
 }
-
-article.tweets {
+.posted-tweets .tweets {
   border: 4px solid #494844;
-  border-radius:12px;
+  border-radius: 12px;
   margin-top: 40px;
   width: 100%;
   margin: 0.5em 2em 0.5em 2em;
 }
-
-article.tweets header {
+.posted-tweets .tweets header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 2px;
   margin: 10 20px;
 }
-
-article.tweets header div {
+.posted-tweets .tweets header div {
   display: flex;
   align-items: center;
 }
-
-article.tweets header div img {
+.posted-tweets .tweets header div img {
   height: 75px;
   width: 75px;
-  opacity: 0.75
+  opacity: 0.75;
 }
-
-article.tweets div.tweet {
+.posted-tweets .tweets header div h2 {
+  color: #494844;
+  font-size: 25px;
+  margin-left: 0.25em;
+}
+.posted-tweets .tweets header div p {
+  opacity: 0.75;
+  color: #494844;
+  font-size: 25px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+.posted-tweets .tweets .tweet {
   font-size: 25px;
   border-bottom: 4px solid #494844;
   margin: 5px 35px;
 }
-
-article.tweets footer {
+.posted-tweets .tweets footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 25px;
   margin: 5px 20px;
-  font-size: 25px
-}
-
-article.tweets header div h2{
-  color: grey;
-  font-size: 25px;
-  margin-left:0.25em
-}
-
-article.tweets header p {
-  opacity: 0.75;
-  color: grey;
   font-size: 25px;
 }
-
-article.tweets div p{
-  width:100%;
-  overflow-wrap: break-word
+.posted-tweets .tweets footer i {
+  cursor: pointer;
+  color: #4056A1;
+  box-shadow: 2px 2px 2px 1px #494844;
 }
-
-.fa-flag, .fa-retweet, .fa-heart, .fa-arrow-up-from-bracket {
- color: #4056A1;
- box-shadow: 2px 2px 2px 1px lightgray;
-}
-
-.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover, .fa-arrow-up-from-bracket:hover{
+.posted-tweets .tweets footer i:hover {
   color: #cea500;
 }
